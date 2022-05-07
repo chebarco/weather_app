@@ -5,7 +5,7 @@ const cityName = document.querySelector(".city-name p");
 const cardBody = document.querySelector(".card-body");
 const cardInfo = document.querySelector(".back-card");
 const iframe = document.querySelector(".iframe");
-const climas = {'Rain':'blKdw9Py-0E', 'Clouds':'N30xWvKdpQ4', 'Clear':'aEiN6sgAnp8', 'Snow':'hU_pIFsq-VM'};
+const climas = {'Rain':'Z_fEKap24wU', 'Clouds':'A1pw9wxqC6I', 'Clear':'xwYkufssBQU', 'Snow':'Kz1wHw16GyA'};
 
 
 
@@ -58,20 +58,20 @@ const isDayTime = (icon) => {
 
 //localstorage
 window.onload = function (e) {
-  buscarClimas(localStorage.getItem("city"));
+  searchWeather(localStorage.getItem("city"));
 };
 
 form.addEventListener("submit", (climasbuscados) => {
   climasbuscados.preventDefault();
   const inputVal = input.value;
-  buscarClimas(inputVal);
+  searchWeather(inputVal);
   buscar.textContent = "";
   form.reset();
   input.focus();
 });
 
 
-function buscarClimas(inputVal) {
+function searchWeather(inputVal) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric&lang=es`;
 
   //APLICAMOS FETCH
